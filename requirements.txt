@@ -1,0 +1,32 @@
+# ============================================================
+# Python 3.10 stable requirements
+# Fixed versions for reproducibility
+# ============================================================
+
+# ---------- Core packaging tools ----------
+setuptools==68.2.2
+wheel==0.41.2
+
+# ---------- Numerical computing ----------
+numpy==1.26.0
+scipy==1.15.1
+sympy==1.14.0
+
+# ---------- Data processing ----------
+pandas==2.2.3
+
+# ---------- Plotting ----------
+matplotlib==3.10.1
+
+# ---------- YAML config files ----------
+pyyaml==6.0.3
+
+# ---------- Jupyter / Notebook ----------
+ipython==8.39.0
+ipykernel==6.25.1
+jupyter==1.1.1
+notebook==7.1.2
+ipywidgets==8.0.6
+
+# ---------- Utility ----------
+tqdm==4.66.1
