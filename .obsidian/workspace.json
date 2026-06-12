@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9cfcccd8a0dc007b",
+        "id": "706760800f47c075",
         "type": "tabs",
         "children": [
           {
-            "id": "0c34db57a612f161",
+            "id": "a988e2dde95bada6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "study.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "study"
+              "title": "新标签页"
             }
           }
         ]
@@ -154,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "study.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "study 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -178,29 +173,30 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "vscode-editor:新建代码文件": false
     }
   },
-  "active": "0c34db57a612f161",
+  "active": "a988e2dde95bada6",
   "lastOpenFiles": [
-    "code/optimize_notebooks.js",
-    "code/py12.ipynb",
-    "code/py11.ipynb",
-    "code/py11.py",
-    "study_完善版.md",
     "code/Python教程-廖雪峰-2025-06-16.pdf",
-    "README.md",
+    "code/py11.ipynb",
+    "code/py2.py",
     "code/guide.md",
+    "code/py1.py",
+    "code/py3.py",
+    "code/py7.py",
+    "code/py10.py",
+    "code/py12.ipynb",
+    "未命名.base",
+    "code/README.md",
     "study.md",
+    "code/py13.ipynb",
+    "code/py12 copy.ipynb",
+    "study_完善版.md",
+    "README.md",
     "notes/python基础.md",
     "notes/venv.md",
-    "code/README.md",
-    "code/py9.py",
-    "code/py8.py",
-    "code/py7.py",
-    "code/py6.py",
-    "code/py5.py",
-    "code/py4.py",
     "docs/guide.md",
     "未命名.canvas"
   ]

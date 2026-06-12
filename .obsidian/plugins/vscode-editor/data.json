@@ -1,0 +1,16 @@
+{
+  "extensions": [
+    "py",
+    "ipynb"
+  ],
+  "folding": true,
+  "lineNumbers": true,
+  "wordWrap": true,
+  "minimap": true,
+  "semanticValidation": true,
+  "syntaxValidation": true,
+  "themeColor": "AUTO",
+  "fontSize": 14,
+  "fontFamily": "'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace",
+  "fontLigatures": true
+}
