@@ -1,8 +1,23 @@
 ---
 tags:
+  - python
   - run
 ---
-有同学问，能不能像.exe文件那样直接运行`.py`文件呢？在Windows上是不行的，但是，在Mac和Linux上是可以的，方法是在`.py`文件的第一行加上一个特殊的注释：
+> Python 脚本运行说明：记录 `.py` 文件在不同系统中的直接运行方式。
+
+# Python 脚本直接运行
+
+## Windows 说明
+
+在 Windows 上，通常通过 Python 解释器运行 `.py` 文件：
+
+```powershell
+python hello.py
+```
+
+## macOS / Linux 说明
+
+在 macOS 和 Linux 上，可以在 `.py` 文件第一行添加 shebang：
 
 ```python
 #!/usr/bin/env python3
@@ -10,17 +25,14 @@ tags:
 print('hello, world')
 ```
 
-然后，通过命令给`hello.py`以执行权限：
+然后给文件添加执行权限：
 
 ```shell
-$ chmod a+x hello.py
+chmod a+x hello.py
 ```
 
-就可以直接运行`hello.py`了，比如在Linux下运行：
+之后可以直接运行：
 
 ```shell
-$ ./hello.py
-hello, world
+./hello.py
 ```
----
-

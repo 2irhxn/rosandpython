@@ -1,4 +1,12 @@
-# Study Guide
+---
+tags:
+  - study
+  - python
+  - hexapod
+---
+> 精简学习指南：围绕六足机器人项目代码调用链，整理新手需要优先掌握的 Python 知识和源码阅读顺序。
+
+# 六足机器人 Python 学习指南
 
 本文面向纯机械背景、0 编程基础的新手，目标不是把 Python 全部学完，而是先学会“读懂并逐步修改这个六足机器人项目所需的 Python”。读这个项目时，最重要的是先理解代码怎样把“想让机器人走一步”一步步变成“18 个腿部舵机的命令”。
 
@@ -1405,4 +1413,3 @@ python .\sdk\send.py --mode wave --stride-x 2 --lift 2.5 --frames 18 --cycles 1 
 ```text
 一条命令如何从终端输入，经过 send.py 参数解析，进入 gait.py 生成足端轨迹，再经过 hex.py 和 leg.py 求 IK，最后由 servo.py 转成 pwd 舵机命令。
 ```
-
