@@ -300,7 +300,133 @@ tags:
 - `a[a == 0] = -1`: 布尔索引赋值。
 - `a[1:4].copy()`: 使用 `copy()` 创建独立副本，避免视图共享内存的问题。
 
-## py14.ipynb: 待补充
+## py14.ipynb: NumPy 数组操作
 
-- 当前 notebook 合法但没有任何单元格。
-- 如果后续新增主题，建议先添加 Markdown 学习目标，再按小节添加代码单元。
+- `a.reshape(3, 4)`: 改变数组形状，不改变数据。
+- `a.reshape(-1, 3)`: 用 `-1` 自动推算该维度大小。
+- `a.flatten()`: 展平为一维，返回拷贝。
+- `a.ravel()`: 展平为一维，返回视图（修改会影响原数组）。
+- `a.resize(2, 6)`: 直接修改原数组形状，不够则重复填充。
+- `np.flip(a, 0)`: 沿行翻转（上下翻转）。
+- `np.flip(a, 1)`: 沿列翻转（左右翻转）。
+- `np.fliplr(a)` / `np.flipud(a)`: 专用翻转函数。
+- `np.expand_dims(a, axis=0)`: 增加一个维度。
+- `np.squeeze(d)`: 移除长度为 1 的维度。
+- `a[np.newaxis, :]`: 快捷增加维度。
+- `np.concatenate((a, b), axis=0)`: 沿已有轴连接数组。
+- `np.vstack((a, b))` / `np.hstack((a, b))`: 垂直/水平堆叠。
+- `np.stack((a, b), axis=0)`: 沿新轴堆叠。
+- `np.hsplit(a, 2)`: 沿水平方向分割。
+- `np.vsplit(a, 3)`: 沿垂直方向分割。
+- `np.split(x, [3, 7])`: 按索引位置分割。
+- `np.append(a, [6, 7, 8])`: 末尾添加元素。
+- `np.insert(a, 2, [10, 20])`: 在指定位置插入。
+- `np.delete(a, [0, 3])`: 删除指定位置的元素。
+- `np.bitwise_and(a, b)`: 按位与。
+- `np.bitwise_or(a, b)`: 按位或。
+- `np.bitwise_xor(a, b)`: 按位异或。
+- `np.invert(a)`: 按位取反。
+- `np.left_shift(a, 2)`: 左移（乘以 2^n）。
+- `np.right_shift(a, 2)`: 右移（整除 2^n）。
+
+## py15.ipynb: NumPy 字符串操作 (np.char)
+
+- `np.char.add(a, b)`: 逐元素字符串拼接。
+- `np.char.multiply(a, 3)`: 把每个字符串重复指定次数。
+- `np.char.upper(a)`: 全部转大写。
+- `np.char.lower(a)`: 全部转小写。
+- `np.char.capitalize(a)`: 只把每个字符串的第一个字符转大写。
+- `np.char.title(a)`: 把每个单词的首字母转大写。
+- `np.char.center(a, 10, fillchar='-')`: 居中到指定长度。
+- `np.char.strip(a)`: 去掉开头和结尾的指定字符。
+- `np.char.split(a, sep=',')`: 按指定分隔符分割字符串。
+- `np.char.splitlines(a)`: 按换行符分割。
+- `np.char.replace(a, 'hello', 'hi')`: 替换字符串中的子串。
+- `np.char.join('-', a)`: 对每个字符串内部的字符进行连接。
+- `np.char.encode(a, 'utf-8')`: 把 Unicode 字符串编码成字节。
+- `np.char.decode(b, 'utf-8')`: 把字节字符串解码成普通字符串。
+- 字符串数组 dtype: `<U` (Unicode) 或 `|S` (bytes)。
+
+## py16.ipynb: NumPy 数学、算术、统计与排序函数
+
+- `np.sin(a)` / `np.cos(a)` / `np.tan(a)`: 三角函数（输入为弧度）。
+- `np.arcsin(0.5)`: 反三角函数（返回弧度）。
+- `np.degrees(π)` / `np.radians(180)`: 角度转换。
+- `np.sqrt(a)` / `np.square(a)`: 开方和平方。
+- `np.exp(1)` / `np.log(e)` / `np.log10(100)` / `np.log2(8)`: 指数与对数。
+- `np.ceil(a)` / `np.floor(a)` / `np.round(a)` / `np.trunc(a)`: 取整函数。
+- `np.abs(a)` / `np.sign(a)`: 绝对值和符号。
+- `np.gcd(12, 8)` / `np.lcm(12, 8)`: 最大公约数和最小公倍数。
+- `np.add(a, b)` / `np.subtract(a, b)` / `np.multiply(a, b)`: 加减乘。
+- `np.divide(a, b)` / `np.floor_divide(a, b)` / `np.mod(a, b)`: 除法、整除、取模。
+- `np.reciprocal(a)` / `np.negative(a)`: 倒数和负数。
+- `np.clip(a, 5, 15)`: 截断到指定范围。
+- `np.divmod(a, b)`: 同时返回商和余数。
+- `np.mean(a)` / `np.median(a)` / `np.std(a)` / `np.var(a)`: 平均值、中位数、标准差、方差。
+- `np.sum(a)` / `np.cumsum(a)` / `np.prod(a)` / `np.cumprod(a)`: 求和、累计和、求积、累计积。
+- `np.amin(a)` / `np.amax(a)` / `np.ptp(a)`: 最小值、最大值、极差。
+- `np.percentile(a, 25)` / `np.quantile(a, 0.5)`: 百分位数和分位数。
+- `np.average(a, weights=w)`: 加权平均。
+- `np.nanmean(a)` / `np.nansum(a)` / `np.nanstd(a)`: NaN 安全版本。
+- `np.sort(a, kind='quicksort')`: 排序（返回新数组）。
+- `a.sort()`: 原地排序（修改原数组）。
+- `np.argsort(a)`: 排序后的索引。
+- `np.where(a > 25)`: 条件选择。
+- `np.unique(a)`: 去重。
+- `np.isin(a, [30, 40])`: 判断元素是否在指定集合中。
+- `np.select(conds, choices)`: 多条件分支选择。
+- `a @ b` / `np.dot(a, b)`: 矩阵乘法。
+- `np.trace(a)` / `np.linalg.det(a)` / `np.linalg.inv(a)`: 对角线和、行列式、逆矩阵。
+
+## py17.ipynb: NumPy 字节交换、副本和视图
+
+- 大端 (Big-Endian): 高字节存低地址，低字节存高地址。
+- 小端 (Little-Endian): 低字节存低地址，高字节存高地址。
+- `a.byteswap(inplace=True)`: 原地交换字节序。
+- `a.astype('>i4')` / `a.astype('<i4')`: 转为大端/小端。
+- `a.dtype.newbyteorder('<')`: 创建新字节序的 dtype。
+- `np.fromfile(f, dtype='>i4')`: 读取时指定字节序。
+- `b = a`: 赋值是引用，同一个对象。
+- `b = a.view()`: 视图，共享数据，但 id 不同。
+- `b = a[i:j]`: 切片返回视图，修改会影响原数组。
+- `b = a.copy()`: 副本，完全独立的副本。
+- `b.base is a`: 判断是视图还是副本。
+
+## py18.ipynb: NumPy 广播与迭代
+
+- 广播规则: 从末尾开始逐维度比较，维度相等或其中一个为 1 则兼容。
+- `a[:, np.newaxis] + b[np.newaxis, :]`: 用 newaxis 增加维度实现广播。
+- `for x in np.nditer(a)`: 逐元素遍历。
+- `np.nditer(a, order='F')`: 按列优先遍历。
+- `np.nditer(a, op_flags=['readwrite'])`: 允许修改元素。
+- `np.ndenumerate(a)`: 带索引的逐元素遍历。
+- `a.flat`: 展平后遍历。
+
+## py19.ipynb: NumPy 矩阵库与线性代数
+
+- `np.matrix('1 2 3; 4 5 6')`: 创建矩阵（`*` 直接做矩阵乘法）。
+- `a.I`: 逆矩阵。
+- `a.H`: 共轭转置。
+- `np.linalg.det(a)`: 行列式。
+- `np.linalg.inv(a)`: 逆矩阵。
+- `np.linalg.solve(A, b)`: 解线性方程组 Ax = b。
+- `np.linalg.eig(a)`: 特征值和特征向量。
+- `np.linalg.svd(a)`: 奇异值分解。
+- `np.linalg.norm(a)`: 向量/矩阵范数。
+- `np.linalg.lstsq(A, y)`: 最小二乘解。
+
+## py20.ipynb: NumPy IO 与 Matplotlib 基础
+
+- `np.save('data.npy', a)`: 保存为 .npy 文件。
+- `np.load('data.npy')`: 读取 .npy 文件。
+- `np.savez('multi.npz', arr1=x, arr2=y)`: 保存多个数组到 .npz 文件。
+- `np.savetxt('data.csv', a, delimiter=',')`: 保存为 CSV。
+- `np.loadtxt('data.csv', delimiter=',')`: 读取 CSV。
+- `np.genfromtxt(f, delimiter=',')`: 处理缺失值的文本读取。
+- `plt.plot(x, y)`: 折线图。
+- `plt.scatter(x, y)`: 散点图。
+- `plt.bar(categories, values)`: 柱状图。
+- `plt.hist(data, bins=30)`: 直方图。
+- `plt.subplots(2, 2)`: 子图。
+- `plt.imshow(data, cmap='hot')`: 热力图。
+- `plt.savefig('plot.png')`: 保存图片。

@@ -29,7 +29,13 @@ tags:
 | `py11.ipynb` | NumPy 数组、dtype 与形状 |
 | `py12.ipynb` | NumPy 常用数组创建函数 |
 | `py13.ipynb` | NumPy 切片和索引 |
-| `py14.ipynb` | 空 notebook，占位或待补充内容 |
+| `py14.ipynb` | NumPy 数组操作（reshape/flip/连接/分割/添加删除） |
+| `py15.ipynb` | NumPy 字符串操作 (np.char) |
+| `py16.ipynb` | NumPy 数学、算术、统计与排序函数 |
+| `py17.ipynb` | NumPy 字节交换、副本和视图 |
+| `py18.ipynb` | NumPy 广播机制与迭代数组 |
+| `py19.ipynb` | NumPy 矩阵库与线性代数 |
+| `py20.ipynb` | NumPy IO 与 Matplotlib 基础 |
 | `Python教程-廖雪峰-2025-06-16.pdf` | Python 教程参考资料 |
 
 ## 使用方式
@@ -49,3 +55,4 @@ tags:
 - `py1.ipynb` 包含 `input()`，运行对应代码单元时需要输入内容。
 - `py5.ipynb`、`py8.ipynb`、`py9.ipynb` 输出较多，适合作为语法演示 notebook 查看。
 - `py10.ipynb` 中的 `sys.argv` 示例在 notebook 环境下和命令行脚本运行略有不同。
+- `py13-py20.ipynb` 为 NumPy 系列，建议按顺序学习。
