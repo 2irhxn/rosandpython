@@ -3,17 +3,17 @@ tags:
   - guide
   - python基础
 ---
-> Python 基础索引：按 `pyN.py` / `pyN.ipynb` 对应主题整理语法点，便于快速定位示例代码。
+> Python 基础索引：按 `pyN.ipynb` 对应主题整理语法点，便于快速定位示例代码。
 
 # Python 基础索引
 
-## py1: 输入输出
+## py1.ipynb: 输入输出
 
 - `print('hello, world')`: 使用 `print()` 向终端输出固定字符串。
 - `input('请输入你的名字：')`: 使用 `input()` 从终端读取用户输入，并把输入结果赋值给变量 `name`。
 - `print(f'你好，{name}！')`: 使用 f-string 在字符串中嵌入变量，完成带变量内容的输出。
 
-## py2: 数据类型、变量、常量、运算
+## py2.ipynb: 数据类型、变量、常量、运算
 
 - 整数 `int`: 包含十进制 `10`、二进制 `0b1010`、八进制 `0o12`、十六进制 `0x1A`。
 - 浮点数 `float`: 包含普通小数 `3.14`、负数和科学计数法 `-1.5e-2`。
@@ -28,7 +28,7 @@ tags:
 - 地板除 `//`: 只保留整数部分，例如 `10 // 3`。
 - 取模 `%`: 获取余数，例如 `10 % 3`。
 
-## py3: 字符编码、bytes、字符串格式化
+## py3.ipynb: 字符编码、bytes、字符串格式化
 
 - Unicode 字符串: `print('包含中文的str')` 展示 Python 字符串可以包含中文。
 - `ord('A')`、`ord('a')`、`ord('中')`: 把字符转换成对应编码值。
@@ -53,7 +53,7 @@ tags:
 - `'Hello, {0}, 成绩提升了 {1:.1f}%'.format(...)`: 使用 `format()` 格式化字符串。
 - `f'The area of a circle with radius {r} is {s:.2f}'`: 使用 f-string 和格式说明保留两位小数。
 
-## py4: list、tuple、索引、增删改查
+## py4.ipynb: list、tuple、索引、增删改查
 
 - `list`: `classmate = ['Michael', 'Bob', 'Tracy']` 创建列表。
 - 正向索引: `classmate[0]` 访问第一个元素。
@@ -75,7 +75,7 @@ tags:
 - `tuple` 中的 `list`: `p = ('a', 'b', ['A', 'B'])`。
 - `p[2][0] = 'X'`: `tuple` 的元素指向不变，但其中的 `list` 内容可以修改。
 
-## py5: 条件判断、match-case、循环控制
+## py5.ipynb: 条件判断、match-case、循环控制
 
 - `if age >= 6`、`elif age >= 18`、`else`: 使用 `if-elif-else` 做多分支判断。
 - `birth < 2000`: 用条件判断区分 00 前和 00 后。
@@ -97,7 +97,7 @@ tags:
 - `break`: 在循环中满足条件时提前结束循环。
 - `continue`: 跳过当前这一轮，直接进入下一轮循环。
 
-## py6: dict、set、集合运算
+## py6.ipynb: dict、set、集合运算
 
 - `dict`: `d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}` 创建字典。
 - `d['Michael']`: 通过 `key` 获取对应 `value`。
@@ -113,7 +113,7 @@ tags:
 - `s | p`: 求两个集合的并集。
 - `set` 中的混合类型: `p = {1, 2, 6, 'apple', 'banana', 'cherry'}`。
 
-## py7: 函数定义、参数、返回值、递归
+## py7.ipynb: 函数定义、参数、返回值、递归
 
 - `def S(r)`: 定义计算圆面积的函数。
 - `return 3.14 * r ** 2`: 使用 `return` 返回表达式结果。
@@ -139,7 +139,7 @@ tags:
 - `def fact(n)`: 定义递归函数。
 - `return n * fact(n - 1)`: 使用递归计算阶乘。
 
-## py8: 切片、迭代、列表推导式、生成器、迭代器
+## py8.ipynb: 切片、迭代、列表推导式、生成器、迭代器
 
 - `L[0:3]`: 从索引 `0` 开始切片，到索引 `3` 结束但不包含 `3`。
 - `L[:3]`: 省略起始索引，等价于从 `0` 开始。
@@ -167,7 +167,7 @@ tags:
 - `isinstance((x for x in range(10)), Iterator)`: 判断生成器是否是迭代器。
 - `isinstance([], Iterator)`、`isinstance({}, Iterator)`、`isinstance('abc', Iterator)`: 判断 `list`、`dict`、`str` 是否是迭代器。
 
-## py9: 高阶函数、闭包、匿名函数、装饰器、偏函数
+## py9.ipynb: 高阶函数、闭包、匿名函数、装饰器、偏函数
 
 - `def f(x): return x * x`: 定义函数作为 `map()` 的参数。
 - `map(f, [1, 2, ...])`: 对可迭代对象中的每个元素应用函数。
@@ -213,7 +213,7 @@ tags:
 - `import functools`: 导入 `functools` 模块。
 - `functools.partial(int, base=2)`: 创建偏函数，固定 `int()` 的 `base` 参数。
 
-## py10: 模块、命令行参数、私有函数、入口判断
+## py10.ipynb: 模块、命令行参数、私有函数、入口判断
 
 - `# -*- coding: utf-8 -*-`: 声明源文件编码。
 - `' a test module '`: 模块文档字符串。
@@ -299,3 +299,8 @@ tags:
 - `a[0, :] = 1`: 切片赋值，整行或整列赋值。
 - `a[a == 0] = -1`: 布尔索引赋值。
 - `a[1:4].copy()`: 使用 `copy()` 创建独立副本，避免视图共享内存的问题。
+
+## py14.ipynb: 待补充
+
+- 当前 notebook 合法但没有任何单元格。
+- 如果后续新增主题，建议先添加 Markdown 学习目标，再按小节添加代码单元。
